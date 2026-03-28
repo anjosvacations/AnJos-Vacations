@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnJos Vacations Inc.</title>
+
+<style>
+body { margin:0; font-family: Arial, sans-serif; color:#333; }
+header { background:#0a6fae; color:white; padding:20px; text-align:center; }
+nav { background:#084d7a; padding:10px; text-align:center; }
+nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+.hero {
+  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
+  height:400px; display:flex; align-items:center; justify-content:center;
+  color:white; font-size:2em; font-weight:bold; text-align:center;
+}
+.section { padding:40px; text-align:center; }
+.packages { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.card {
+  border:1px solid #ddd; padding:20px; width:260px;
+  border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+.price { color:#0a6fae; font-size:1.5em; margin:10px 0; }
+form input, form textarea {
+  width:80%; padding:10px; margin:10px 0;
+  border:1px solid #ccc; border-radius:5px;
+}
+button {
+  background:#0a6fae; color:white; border:none;
+  padding:10px 20px; border-radius:5px; cursor:pointer;
+}
+button:hover { background:#084d7a; }
+.whatsapp {
+  position:fixed; bottom:20px; right:20px;
+  background:#25D366; color:white; padding:15px;
+  border-radius:50%; text-decoration:none; font-size:20px;
+}
+footer { background:#0a6fae; color:white; text-align:center; padding:15px; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>AnJos Vacations Inc.</h1>
+  <p>Caribbean Vacation Rentals | St. Lucia</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#packages">Packages</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+  Book Your Dream Caribbean Escape 🌴
+</div>
+
+<div class="section" id="packages">
+  <h2>Vacation Packages</h2>
+  <div class="packages">
+
+    <div class="card">
+      <h3>Beachfront Villa</h3>
+      <p>Luxury stay with ocean views in St. Lucia.</p>
+      <div class="price">$250/night</div>
+    </div>
+
+    <div class="card">
+      <h3>Romantic Getaway</h3>
+      <p>Perfect for couples & honeymoons.</p>
+      <div class="price">$180/night</div>
+    </div>
+
+    <div class="card">
+      <h3>Family Vacation Home</h3>
+      <p>Spacious rentals for the whole family.</p>
+      <div class="price">$200/night</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section" id="contact">
+  <h2>Book Your Stay</h2>
+
+  <form action="mailto:anjosvacations@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required><br>
+    <input type="email" name="email" placeholder="Your Email" required><br>
+    <textarea name="message" placeholder="Travel dates, number of guests..." required></textarea><br>
+    <button type="submit">Send Booking Request</button>
+  </form>
+
+  <p>Email: anjosvacations@gmail.com</p>
+  <p>Phone: +1 404-810-1342</p>
+  <p>Location: Marigot, Castries, St. Lucia</p>
+</div>
+
+<a class="whatsapp" href="https://wa.me/14048101342" target="_blank">💬</a>
+
+<footer>
+  <p>&copy; 2026 AnJos Vacations Inc.</p>
+</footer>
+
+</body>
+</html>
