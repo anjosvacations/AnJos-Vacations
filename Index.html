@@ -1,107 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AnJos Vacations Inc.</title>
-
-<style>
-body { margin:0; font-family: Arial, sans-serif; color:#333; }
-header { background:#0a6fae; color:white; padding:20px; text-align:center; }
-nav { background:#084d7a; padding:10px; text-align:center; }
-nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
-.hero {
-  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center/cover;
-  height:400px; display:flex; align-items:center; justify-content:center;
-  color:white; font-size:2em; font-weight:bold; text-align:center;
-}
-.section { padding:40px; text-align:center; }
-.packages { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-.card {
-  border:1px solid #ddd; padding:20px; width:260px;
-  border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-.price { color:#0a6fae; font-size:1.5em; margin:10px 0; }
-form input, form textarea {
-  width:80%; padding:10px; margin:10px 0;
-  border:1px solid #ccc; border-radius:5px;
-}
-button {
-  background:#0a6fae; color:white; border:none;
-  padding:10px 20px; border-radius:5px; cursor:pointer;
-}
-button:hover { background:#084d7a; }
-.whatsapp {
-  position:fixed; bottom:20px; right:20px;
-  background:#25D366; color:white; padding:15px;
-  border-radius:50%; text-decoration:none; font-size:20px;
-}
-footer { background:#0a6fae; color:white; text-align:center; padding:15px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ANJOS VACATIONS INC. — concierge services, property rentals, island tours and experiences, and catering in Saint Lucia." />
+  <title>ANJOS VACATIONS INC. | Saint Lucia</title>
+  <style>
+    :root{
+      --navy:#102a43;
+      --blue:#1f6f8b;
+      --turquoise:#2aa9a0;
+      --sand:#f7f1e5;
+      --cream:#fffdf8;
+      --gold:#d9a441;
+      --text:#243b53;
+      --muted:#627d98;
+      --white:#fff;
+      --shadow:0 16px 40px rgba(16,42,67,.12);
+      --radius:18px;
+      --max:1160px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(92%,var(--max));margin:auto}
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      background:rgba(255,253,248,.94);backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(16,42,67,.08)
+    }
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .logo{font-weight:900;letter-spacing:.08em;color:var(--navy);font-size:1rem}
+    .logo span{display:block;font-size:.62rem;letter-spacing:.25em;color:var(--turquoise);margin-top:-3px}
+    .nav-links{display:flex;gap:24px;align-items:center;font-weight:700;font-size:.92rem}
+    .nav-links a:hover{color:var(--turquoise)}
+    .menu{display:none;border:0;background:none;font-size:1.7rem;color:var(--navy)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:999px;font-weight:800;border:0;cursor:pointer;transition:.2s}
+    .btn-primary{background:var(--turquoise);color:white}
+    .btn-primary:hover{transform:translateY(-2px);filter:brightness(.95)}
+    .btn-outline{border:2px solid rgba(255,255,255,.8);color:white}
+    .btn-outline:hover{background:white;color:var(--navy)}
+    .hero{
+      min-height:760px;padding:150px 0 90px;display:flex;align-items:center;
+      color:white;position:relative;overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(5,25,42,.82),rgba(5,25,42,.48)),
+        url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=2200&q=85") center/cover;
+    }
+    .hero-content{max-width:720px}
+    .eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.78rem;font-weight:900;color:#8fe0d7;margin-bottom:16px}
+    h1{font-size:clamp(3rem,7vw,5.7rem);line-height:.98;letter-spacing:-.05em;margin-bottom:24px}
+    .hero p{font-size:1.18rem;max-width:650px;color:rgba(255,255,255,.9);margin-bottom:30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    section{padding:92px 0}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 48px}
+    .section-head h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;color:var(--navy);margin-bottom:12px}
+    .section-head p{color:var(--muted)}
+    .services{background:var(--sand)}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .card{background:white;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+    .card:hover{transform:translateY(-6px)}
+    .card-img{height:190px;background-size:cover;background-position:center}
+    .card-body{padding:25px}
+    .icon{font-size:2rem;margin-bottom:10px}
+    .card h3{color:var(--navy);font-size:1.25rem;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:.95rem}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .about-photo{min-height:500px;border-radius:28px;background:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85") center/cover;box-shadow:var(--shadow)}
+    .about h2{font-size:clamp(2.1rem,4vw,3.5rem);line-height:1.05;color:var(--navy);margin-bottom:18px}
+    .about p{color:var(--muted);margin-bottom:16px}
+    .checks{list-style:none;display:grid;gap:10px;margin:22px 0 28px}
+    .checks li:before{content:"✓";font-weight:900;color:var(--turquoise);margin-right:10px}
+    .experience{background:var(--navy);color:white}
+    .experience .section-head h2{color:white}
+    .experience .section-head p{color:#c9d6e3}
+    .experience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .experience-card{padding:30px;border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);background:rgba(255,255,255,.05)}
+    .experience-card h3{margin:12px 0 8px;font-size:1.3rem}
+    .experience-card p{color:#c9d6e3}
+    .contact{background:linear-gradient(180deg,var(--cream),#eef8f6)}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:30px}
+    .contact-box,.form-box{background:white;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+    .contact-box h3,.form-box h3{color:var(--navy);font-size:1.5rem;margin-bottom:15px}
+    .contact-item{padding:16px 0;border-bottom:1px solid #e8eef2}
+    .contact-item:last-child{border-bottom:0}
+    .contact-item small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:800}
+    .contact-item a{color:var(--blue);font-weight:700}
+    form{display:grid;gap:14px}
+    label{font-weight:700;font-size:.9rem;color:var(--navy)}
+    input,textarea,select{width:100%;padding:13px 14px;border:1px solid #ccd6df;border-radius:10px;font:inherit;margin-top:6px;background:#fff}
+    textarea{min-height:140px;resize:vertical}
+    footer{background:#081d2d;color:#c9d6e3;padding:35px 0}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-brand{font-weight:900;color:white}
+    .footer-small{font-size:.88rem}
+    .notice{margin-top:12px;color:#8fe0d7;font-size:.85rem}
+    @media(max-width:900px){
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
+      .about-photo{min-height:360px}
+      .experience-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:720px){
+      nav{height:68px}
+      .menu{display:block}
+      .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--cream);padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid #ddd}
+      .nav-links.open{display:flex}
+      .hero{min-height:680px;padding-top:120px}
+      .cards{grid-template-columns:1fr}
+      section{padding:70px 0}
+      .footer-inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
-
 <body>
-
 <header>
-  <h1>AnJos Vacations Inc.</h1>
-  <p>Caribbean Vacation Rentals | St. Lucia</p>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home">ANJOS VACATIONS INC.<span>SAINT LUCIA</span></a>
+      <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Plan Your Stay</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#packages">Packages</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<div class="hero">
-  Book Your Dream Caribbean Escape 🌴
-</div>
-
-<div class="section" id="packages">
-  <h2>Vacation Packages</h2>
-  <div class="packages">
-
-    <div class="card">
-      <h3>Beachfront Villa</h3>
-      <p>Luxury stay with ocean views in St. Lucia.</p>
-      <div class="price">$250/night</div>
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Your Saint Lucia, Your Way</div>
+        <h1>Island living, beautifully arranged.</h1>
+        <p>ANJOS VACATIONS INC. helps you enjoy Saint Lucia with seamless concierge services, comfortable property rentals, unforgettable island tours and experiences, and delicious catering.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Start Planning</a>
+          <a class="btn btn-outline" href="#services">Explore Services</a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Romantic Getaway</h3>
-      <p>Perfect for couples & honeymoons.</p>
-      <div class="price">$180/night</div>
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">What We Do</div>
+        <h2>Everything you need for a memorable island stay.</h2>
+        <p>Choose one service or let us coordinate the details for you from arrival to departure.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80')"></div>
+          <div class="card-body"><div class="icon">✨</div><h3>Concierge Services</h3><p>Personalized assistance, trip planning, reservations, special requests and local support.</p></div>
+        </article>
+        <article class="card">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80')"></div>
+          <div class="card-body"><div class="icon">🏡</div><h3>Property Rentals</h3><p>Find a welcoming home base for your Saint Lucia getaway, vacation or extended stay.</p></div>
+        </article>
+        <article class="card">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80')"></div>
+          <div class="card-body"><div class="icon">🌴</div><h3>Island Tours & Experiences</h3><p>Discover beaches, viewpoints, culture, food and the natural beauty of Saint Lucia.</p></div>
+        </article>
+        <article class="card">
+          <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80')"></div>
+          <div class="card-body"><div class="icon">🍽️</div><h3>Catering</h3><p>Make your vacation effortless with food and catering options tailored to your occasion.</p></div>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Family Vacation Home</h3>
-      <p>Spacious rentals for the whole family.</p>
-      <div class="price">$200/night</div>
+  <section id="about">
+    <div class="container about">
+      <div class="about-photo" aria-label="Tropical Saint Lucia beach"></div>
+      <div>
+        <div class="eyebrow">Welcome to ANJOS</div>
+        <h2>More than a vacation. It's your island experience.</h2>
+        <p>Based in Castries, Saint Lucia, ANJOS VACATIONS INC. is here to make your time on the island easier, more comfortable and more memorable.</p>
+        <p>Whether you're looking for a beautiful place to stay, a private island adventure, help organizing your itinerary, or catering for a special occasion, we're ready to help.</p>
+        <ul class="checks">
+          <li>Personalized vacation planning</li>
+          <li>Local knowledge and attentive service</li>
+          <li>Flexible services for couples, families and groups</li>
+          <li>One convenient point of contact for your stay</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Talk to ANJOS</a>
+      </div>
     </div>
+  </section>
 
-  </div>
-</div>
+  <section class="experience" id="experiences">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Experience Saint Lucia</div>
+        <h2>Let us help you make the most of the island.</h2>
+        <p>Build a trip around relaxation, adventure, food, culture or a little bit of everything.</p>
+      </div>
+      <div class="experience-grid">
+        <article class="experience-card"><div class="icon">🌊</div><h3>Relax & Recharge</h3><p>Slow down with beautiful beaches, comfortable accommodation and easy vacation support.</p></article>
+        <article class="experience-card"><div class="icon">⛰️</div><h3>Adventure & Explore</h3><p>See more of Saint Lucia with memorable tours, sightseeing and island experiences.</p></article>
+        <article class="experience-card"><div class="icon">🥂</div><h3>Celebrate in Style</h3><p>Enhance birthdays, reunions, romantic getaways and special occasions with catering and concierge support.</p></article>
+      </div>
+    </div>
+  </section>
 
-<div class="section" id="contact">
-  <h2>Book Your Stay</h2>
-
-  <form action="mailto:anjosvacations@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <textarea name="message" placeholder="Travel dates, number of guests..." required></textarea><br>
-    <button type="submit">Send Booking Request</button>
-  </form>
-
-  <p>Email: anjosvacations@gmail.com</p>
-  <p>Phone: +1 404-810-1342</p>
-  <p>Location: Marigot, Castries, St. Lucia</p>
-</div>
-
-<a class="whatsapp" href="https://wa.me/14048101342" target="_blank">💬</a>
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Let's Plan</div>
+        <h2>Tell us what your perfect Saint Lucia trip looks like.</h2>
+        <p>Send a request and ANJOS VACATIONS INC. can help you take it from idea to itinerary.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>Contact ANJOS</h3>
+          <div class="contact-item"><small>Email</small><a href="mailto:anjosvacations@gmail.com">anjosvacations@gmail.com</a></div>
+          <div class="contact-item"><small>Phone</small><a href="tel:+14048101342">+1 404 810 1342</a></div>
+          <div class="contact-item"><small>Location</small><strong>Marigot, Castries<br>LC07-201, Saint Lucia</strong></div>
+          
+        </div>
+        <div class="form-box">
+          <h3>Request Information</h3>
+          <form action="mailto:anjosvacations@gmail.com" method="post" enctype="text/plain">
+            <label>Name<input name="Name" required placeholder="Your name"></label>
+            <label>Email<input type="email" name="Email" required placeholder="you@example.com"></label>
+            <label>What can we help with?
+              <select name="Service">
+                <option>Concierge Services</option>
+                <option>Property Rentals</option>
+                <option>Island Tours & Experiences</option>
+                <option>Catering</option>
+                <option>Multiple Services</option>
+              </select>
+            </label>
+            <label>Message<textarea name="Message" required placeholder="Tell us about your dates, group size, interests, and what you need."></textarea></label>
+            <button class="btn btn-primary" type="submit">Send Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>&copy; 2026 AnJos Vacations Inc.</p>
+  <div class="container footer-inner">
+    <div><div class="footer-brand">ANJOS VACATIONS INC.</div><div class="footer-small">Concierge • Rentals • Tours • Experiences • Catering</div></div>
+    <div class="footer-small">© <span id="year"></span> ANJOS VACATIONS INC. All rights reserved.</div>
+  </div>
 </footer>
 
+<script>
+  function toggleMenu(){
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
